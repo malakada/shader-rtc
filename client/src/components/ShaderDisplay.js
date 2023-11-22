@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ShadertoyReact from 'shadertoy-react';
 
-export default function ShaderDisplay({ shaderToyId }) {
+function ShaderDisplay({ shaderToyId }) {
   const [shaderToyCode, setShaderToyCode] = useState('');
   const [shaderToyName, setShaderToyName] = useState('');
   const [shaderToyAuthor, setShaderToyAuthor] = useState('');
   const [error, setError] = useState(null);
+  const [helloWorld, setHelloWorld] = useState('');
 
   useEffect(() => {
     fetch(`https://www.shadertoy.com/api/v1/shaders/${shaderToyId}?key=BtHjRr`)
@@ -35,3 +36,5 @@ export default function ShaderDisplay({ shaderToyId }) {
     </div>
   );
 }
+
+export default ShaderDisplay;
