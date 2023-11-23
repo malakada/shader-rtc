@@ -22,7 +22,7 @@ Right now, not much. You can put in an ID from an existing shader on [shadertoy.
 
 ## What it do next
 
-- [ ] Add a database
+- [x] Add a database
 - [ ] Add a user authentication system
 - [ ] Keep track of "rooms" (different streaming groups)
 - [ ] Add web interface for coding in your own shader (similar functionality as shadertoy.com)
