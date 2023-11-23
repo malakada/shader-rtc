@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  api:
+    build: ./api
+    container_name: api_backend
+    ports:
+      - '5000:5000'
+    volumes:
+      - .:/node_modules
+  web:
+    build: ./client
+    container_name: react_frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/src
+      - .:/node_modules
+      - .:/public
+    depends_on:
+      - api

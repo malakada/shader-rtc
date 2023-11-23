@@ -4,19 +4,11 @@ When you need to jam out with your friends.
 
 ## How to run
 
-1. Start the Express server:
+> Preqrequisites: Install [Docker Desktop](https://docs.docker.com/desktop/)
 
-```
-$ cd app/
-$ node server.js
-```
+Run `docker-compose up`.
 
-2. Start the front-end server:
-
-```
-$ cd client/
-$ npm start
-```
+This will start an api backend service (`:5000`) and a web frontend service (`:3000`).
 
 ## What it do
 
@@ -26,6 +18,7 @@ Right now, not much. You can put in an ID from an existing shader on [shadertoy.
 
 ## What it do next
 
+- [ ] Add a database
 - [ ] Add a user authentication system
 - [ ] Keep track of "rooms" (different streaming groups)
 - [ ] Add web interface for coding in your own shader (similar functionality as shadertoy.com)
