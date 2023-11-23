@@ -7,6 +7,7 @@ When you need to jam out with your friends.
 1. Start the Express server:
 
 ```
+$ cd app/
 $ node server.js
 ```
 
