@@ -8,7 +8,11 @@ When you need to jam out with your friends.
 
 Run `docker-compose up`.
 
-This will start an api backend service (`:5000`) and a web frontend service (`:3000`).
+This will start:
+
+- an api backend service (`:5000`)
+- a web frontend service (`:3000`)
+- a postgres db service (`:5432`)
 
 ## What it do
 

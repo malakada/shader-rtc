@@ -1,5 +1,22 @@
 version: '3.8'
 services:
+  db:
+    image: postgres:16.1-bookworm
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+    tmpfs:
+      - /run
+    healthcheck:
+      test: [ "CMD-SHELL", "[ -r /var/run/postgresql/ready ] || ( pg_isready && touch /var/run/postgresql/ready)" ]
+      interval: 1s
+      timeout: 5s
+      retries: 10
   api:
     build: ./api
     container_name: api_backend
@@ -7,6 +24,9 @@ services:
       - '5000:5000'
     volumes:
       - .:/node_modules
+    depends_on:
+      db:
+        condition: service_healthy
   web:
     build: ./client
     container_name: react_frontend
@@ -18,3 +38,6 @@ services:
       - .:/public
     depends_on:
       - api
+volumes:
+  db:
+    driver: local
