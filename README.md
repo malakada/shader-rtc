@@ -6,7 +6,7 @@ When you need to jam out with your friends.
 
 > Preqrequisites: Install [Docker Desktop](https://docs.docker.com/desktop/)
 
-Run `docker-compose up`.
+Run `docker-compose up --build`.
 
 This will start:
 
