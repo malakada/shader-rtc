@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -10,12 +9,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 import Display from './routes/Display';
+import Home from './routes/Home';
 import Welcome from './routes/Welcome';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Welcome />,
+    element: <Home />,
   },
   {
     path: '/display',

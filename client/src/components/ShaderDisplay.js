@@ -6,7 +6,6 @@ function ShaderDisplay({ shaderToyId }) {
   const [shaderToyName, setShaderToyName] = useState('');
   const [shaderToyAuthor, setShaderToyAuthor] = useState('');
   const [error, setError] = useState(null);
-  const [helloWorld, setHelloWorld] = useState('');
 
   useEffect(() => {
     fetch(`https://www.shadertoy.com/api/v1/shaders/${shaderToyId}?key=BtHjRr`)
@@ -33,6 +32,9 @@ function ShaderDisplay({ shaderToyId }) {
   return (
     <div className="ShaderDisplay">
       <ShadertoyReact fs={shaderToyCode} />
+      <h1>{shaderToyName}</h1>
+      <h2>by {shaderToyAuthor}</h2>
+      
     </div>
   );
 }
